@@ -44,10 +44,13 @@ public class UserAction extends ActionSupport {
 
 
         try {
-            Database.getInstance().executeUpdate(
+            int affectLine = Database.getInstance().executeUpdate(
                     String.format("update user set password='%s' where username='%s' and password='%s';", newPwd, username, originPwd)
             );
-            return SUCCESS;
+            if (affectLine > 0)
+                return SUCCESS;
+            else
+                return "password-error";
         } catch (Exception ex) {
             logger.error(ex.getMessage());
             return "db-error";
