@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="cn.deali.action" namespace="/" extends="struts-default">
+        <default-action-ref name="Index"/>
+
+        <action name="Index" class="cn.deali.action.IndexAction" method="execute">
+            <result name="success">main.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="Login" class="cn.deali.action.LoginAction" method="execute">
+            <result name="login">/login/index.jsp</result>
+            <result name="success">/login/success.jsp</result>
+            <result name="error">/login/error.jsp</result>
+            <result name="db-error">/login/db-error.jsp</result>
+        </action>
+        <action name="SignIn" class="cn.deali.action.SignInAction" method="execute">
+            <result name="input">/sign-in/index.jsp</result>
+            <result name="success">/sign-in/success.jsp</result>
+            <result name="error">/sign-in/error.jsp</result>
+            <result name="discord">/sign-in/password_discord.jsp</result>
+            <result name="db-error">/sign-in/db-error.jsp</result>
+        </action>
+        <action name="User" class="cn.deali.action.UserAction" method="execute">
+            <result name="input">/user/index.jsp</result>
+            <result name="success">/user/success.jsp</result>
+            <result name="error">/user/error.jsp</result>
+            <result name="discord">/user/password_discord.jsp</result>
+            <result name="db-error">/user/db-error.jsp</result>
+        </action>
+    </package>
+</struts>
