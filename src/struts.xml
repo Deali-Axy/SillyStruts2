@@ -18,6 +18,9 @@
             <result name="error">/login/error.jsp</result>
             <result name="db-error">/login/db-error.jsp</result>
         </action>
+        <action name="Message" class="cn.deali.action.MessageAction" method="execute">
+            <result name="success">/message/index.jsp</result>
+        </action>
         <action name="SignIn" class="cn.deali.action.SignInAction" method="execute">
             <result name="input">/sign-in/index.jsp</result>
             <result name="success">/sign-in/success.jsp</result>
